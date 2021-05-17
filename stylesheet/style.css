@@ -1,0 +1,397 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: #354f52;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+center{
+    margin-top: 40px;
+}
+
+center > h2{
+    padding: 10px 20px;
+    width: fit-content;
+    border-bottom: 5px solid #ef233c;
+    border-radius: 5px;
+    margin-bottom: -50px;
+}
+
+.greet-text{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.menu-icon{
+    display: none;
+}
+
+.navbar{
+    background: #ef233c;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li{
+    list-style: none;
+    display: inline-block;
+    padding: 5px 20px;
+}
+
+.howItWorks-wrapper{
+    text-align: center;
+}
+
+.howItWorks-wrapper > center{
+    margin-top: 0;
+}
+
+.howItWorks-wrapper > center > h2{
+    margin:25px 0;
+    width: fit-content;
+    border-bottom: 5px solid #ef233c;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    padding: 10px initial;
+    margin-bottom: 25px;
+}
+
+.howItWorks-wrapper p{
+    padding: 0 20%;
+    text-align:justify;
+    line-height: 30px;
+}
+
+.howItWorks-wrapper img{
+    width: 900px;
+    border-radius: 15px;
+    box-shadow: -2px -1px 20px 8px rgba(119,119,119,0.75);
+    -webkit-box-shadow: -2px -1px 20px 8px rgba(119,119,119,0.75);
+    -moz-box-shadow: -2px -1px 20px 8px rgba(119,119,119,0.75);
+}
+
+.howItWorks-wrapper .mt{
+    margin-top:30px !important;
+}
+
+.howItWorks-wrapper p a{
+    text-decoration: underline;
+}
+
+.mb{
+    margin-bottom: 30px !important;
+}
+
+footer{
+    width:100%;
+    background: #ef233c;
+}
+
+footer center{
+    padding: 5px 0;
+}
+
+footer a{
+    padding:0;
+    font-size: small;
+}
+
+
+/* Todo Page */
+
+
+.accordion {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 15px;
+    overflow: hidden;
+    background: #ef233c;
+    border-radius: 5px;
+    color: white;
+}
+
+.accordion > .d-flex{
+    border-bottom: 3px solid #354f52;
+    padding-bottom: 10px;
+}
+
+.accordion > .accordion-content > div > p{
+    font-size: medium;
+    font-weight: 300;
+    margin: 10px;
+}
+
+a,
+a:active,
+a:focus {
+    outline: 0;
+}
+
+a {
+    padding: 10px 0;
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+li.accordion-content ul li {
+    color: #fff;
+    padding: 5px 15px;
+}
+
+.accordion p:after {
+    /* content: '\02795'; */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "";
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content {
+    width: 400px;
+}
+
+.wrapper .content a{
+    text-decoration: none;
+}
+
+.d-flex{
+    display:flex;
+    justify-content: space-between;
+}
+
+.priority-tag{
+    background:#354f52;
+    padding:5px 10px;
+    font-size: small;
+    border-radius: 5px;
+}
+
+button{
+    padding:7px 15px;
+    border-radius: 5px;
+    background: #354f52;
+    font-size: large;
+    color:white;
+    margin: auto 5px;
+}
+
+button:hover{
+    background: #426266;
+}
+
+.content-heading{
+    margin:15px auto;
+}
+
+.accordion-btn{
+    display:flex;
+    justify-content:flex-end;
+}
+
+.accordion-btn button{
+    border: none;
+}
+
+
+/* Add New Todo View  */
+
+
+.newTodoForm,.signUpForm,.loginForm,.updateTodo,.contactForm{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newTodoForm > div,.signUpForm > div,.loginForm > div, .updateTodo > div,.contactForm > div{
+    background: #ef233c;
+    padding: 50px;
+    width: 400px;
+}
+
+.newTodoForm > .left-content{ 
+    border-radius: 15px 0px 0px 15px;
+    text-transform: uppercase;
+}
+
+.newTodoForm > .left-content > h3{
+    text-align: center;
+}
+
+.newTodoForm > .right-content{ 
+    border-radius: 0px 15px 15px 0px;
+    text-transform: uppercase;
+}
+
+.newTodoForm > .right-content > h3{
+    text-align: center;
+}
+
+.newTodoForm > .center-content,.signUpForm > div,.loginForm > div, .updateTodo > div, .contactForm > div{
+    /* border-radius: 0 15px 15px 0; */
+    border-radius: 15px;
+}
+
+.newTodoForm input, .signUpForm input, .loginForm input, .accordion-content input, .updateTodo input, .contactForm input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+}
+
+.newTodoForm button,.signUpForm button,.loginForm button,.updateTodo button,.contactForm button{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size:smaller;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+}
+
+.accordion-content input{
+    width: initial;
+    padding-left:20px;
+    padding-right: 20px;
+    margin: auto 5px;
+}
+
+.newTodoForm textarea, .updateTodo textarea, .contactForm textarea{
+    width:100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.newTodoForm select, .updateTodo select{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.submit-btn{
+    background: #354f52;
+    color:white;
+    transition: 0.3s;
+}
+
+.submit-btn:hover{
+    background: #354f52;
+    box-shadow: 0px 10px 20px #777;
+}
+
+.title,.description,.priority,.position,.username,.mail,.password,.name,.message{
+    margin-bottom: 20px;
+}
+
+.newTodoForm label{
+    font-weight: bold;
+}
+
+
+/* Media Queries */
+
+
+@media(max-width:960px){
+    body{
+        min-height: 100vh;
+        display: flex;
+        flex-direction:column;
+    }
+
+    footer{
+        margin-top:auto;
+    }
+
+    .menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    .navbar li{
+        list-style: none;
+        display:block;
+        text-align: center;
+        padding: 5px 20px;
+    }
+
+    .howItWorks-wrapper img{
+        width:90%;
+    }
+
+    .wrapper{
+        display: block;
+    }
+
+    .howItWorks-wrapper p{
+        padding:0 10%;
+    }
+
+    .content{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .newTodoForm,.signUpForm,.loginForm,.updateTodo,.contactForm{
+        height: auto;
+        width: 90%;
+        margin-bottom: 30px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .left-content,
+    .right-content{
+        display: none;        
+    }
+    
+    center{
+        margin-top: 0;
+    }
+
+    center > h2{
+        margin:25px 0;
+        width: fit-content;
+        border-bottom: 5px solid #ef233c;
+        border-radius: 5px;
+        padding-bottom: 10px;
+        padding: 10px initial;
+        margin-bottom: 25px;
+    }
+}

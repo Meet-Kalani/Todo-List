@@ -1,0 +1,31 @@
+<center><h2>Add Todo</h2></center>
+
+<div class="newTodoForm">
+    <div class="left-content">
+        <h3>The Future is Created by What you do Today<br><strike>not Tomorrow</strike>.</h3>
+    </div>
+    <div class="center-content">
+        <form ng-controller="addNewTodoController" name="addNewTodoForm" ng-submit="submit()">
+            <div class="title">
+                <label for="title">Title</label><br>
+                <input type="text" name="title" ng-model="data.title" required><br>
+            </div>
+            <div class="description">
+                <label for="description">Description</label><br>
+                <textarea name="description" ng-model="data.description" rows="5" required></textarea><br>
+            </div>
+            <div class="priority">
+                <label for="priority">Priority</label><br>
+                <select ng-model="data.priority" ng-init="data.priority = priorities[0]" ng-options="item for item in priorities" required></select>
+            </div>
+            <div class="position">
+                <label for="position">Status</label><br>
+                <select ng-model="data.position" ng-init="data.position = positions[0]" ng-options="item for item in positions" required></select><br>
+            </div>
+            <button class="submit-btn" type="submit">Add Todo</button>
+        </form>
+    </div>
+    <div class="right-content">
+        <h3>Yesterday is history.<br>tomorrow is a mystery.<br>but today is a gift.<br>that's why we call<br>it the "present".</h3>
+    </div>
+</div>

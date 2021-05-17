@@ -1,0 +1,84 @@
+<div class="wrapper" ng-controller="todoController">
+    <div class="content">
+        <div class="content-heading">
+            <h2>To Do</h2>
+        </div>
+
+        <a href ng-repeat="data in toDo">
+            <ul class="accordion">
+                <div class="d-flex">
+                    <div>
+                        <p>{{data.title}}</p>
+                    </div>
+                    <div>
+                        <p class="priority-tag">{{data.priority}} </p>
+                    </div>
+                </div>
+                <li class="accordion-content">
+                    <div>
+                        <p>{{data.description}}</p>
+                    </div>
+                    <div class="accordion-btn" ng-controller="accordionBtnController">
+                        <button class="submit-btn" ng-click="update(data)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        <button class="submit-btn" ng-click="delete(data)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </div>
+                </li>
+            </ul>
+        </a>
+    </div>
+
+    <div class="content">
+
+        <div class="content-heading">
+            <h2>Doing</h2>
+        </div>
+        <a href ng-repeat="data in doing">
+            <ul class="accordion">
+                <div class="d-flex">
+                    <div>
+                        <p>{{data.title}}</p>
+                    </div>
+                    <div>
+                        <p class="priority-tag">{{data.priority}} </p>
+                    </div>
+                </div>
+                <li class="accordion-content">
+                    <div>
+                        <p>{{data.description}}</p>
+                    </div>
+                    <div class="accordion-btn" ng-controller="accordionBtnController">
+                        <button class="submit-btn" ng-click="update(data)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        <button class="submit-btn" ng-click="delete(data)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </div>
+                </li>
+            </ul>
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="content-heading">
+            <h2>Done</h2>
+        </div>
+        <a href ng-repeat="data in done">
+            <ul class="accordion">
+                <div class="d-flex">
+                    <div>
+                        <p>{{data.title}}</p>
+                    </div>
+                    <div>
+                        <p class="priority-tag">{{data.priority}} </p>
+                    </div>
+                </div>
+                <li class="accordion-content">
+                    <div>
+                        <p>{{data.description}}</p>
+                    </div>
+                    <div class="accordion-btn" ng-controller="accordionBtnController">
+                        <button class="submit-btn" ng-click="update(data)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        <button class="submit-btn" ng-click="delete(data)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </div>
+                </li>
+            </ul>
+        </a>
+    </div>
+</div>

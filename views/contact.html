@@ -1,0 +1,21 @@
+<center><h2>Contact</h2></center>
+
+<div class="contactForm">
+    <div>
+        <form ng-controller="contactController" ng-submit="submit()">
+            <div class="name">
+                <label for="name">Name</label>
+                <input type="text" name="name" ng-model="data.name" required>
+            </div>
+            <div class="mail">
+                <label for="mail">Mail</label>
+                <input type="text" name="mail" ng-model="data.mail" required>
+            </div>
+            <div class="message">
+                <label for="message">Message</label><br>
+                <textarea name="message" ng-model="data.message" rows="5" required></textarea><br>
+            </div>
+            <button class="submit-btn" type="submit">Send Message</button>
+        </form>
+    </div>
+</div>

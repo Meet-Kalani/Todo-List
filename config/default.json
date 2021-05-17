@@ -1,0 +1,6 @@
+{
+    "jwtPrivateKey":"",
+    "smtpUsername":"",
+    "smtpPassword":"",
+    "dbPassword":""
+}
