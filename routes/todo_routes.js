@@ -13,6 +13,7 @@ router.get('/', auth, (req, res) => {
         .populate('todo').exec((err, founduser) => {
             if (err) {
                 console.log(err);
+                res.send(err);
             } else {
                 console.log(founduser);
                 res.send(founduser);
@@ -27,6 +28,7 @@ router.get('/u/:userID/:todoID', auth, (req, res) => {
     user.findOne({ _id: req.params.userID }, (err, founduser) => {
         if (err) {
             console.log(err);
+            res.send(err);
         } else {
             for (let i = 0; i < founduser.todo.length;i++) {
                 if (founduser.todo[i]._id == req.params.todoID) {
@@ -47,13 +49,15 @@ router.post('/a', auth, (req, res) => {
         position: req.body.position
     }, (err, success) => {
         if (err) {
-            console.log(err)
+            console.log(err);
+            res.send(err);
         } else {
             let token = req.headers['x-access-token'] || req.headers['authorization'];
             let decoded = jwt.verify(token, config.get('jwtPrivateKey'));
             user.findOne({ mail: decoded.mail }, (err, foundUser) => {
                 if (err) {
                     console.log(err);
+                    res.send(err);
                 } else {
 
                     let idOfCreatedTodo = success;
@@ -64,6 +68,7 @@ router.post('/a', auth, (req, res) => {
                         (err, data) => {
                             if (err) {
                                 console.log(err);
+                                res.send(err);
                             } else {
                                 res.json(data);
                             }
@@ -83,6 +88,7 @@ router.put('/u/:id', auth, (req, res) => {
     user.findOne({mail:decoded.mail},(err,foundUser)=>{
         if(err){
             console.log(err);
+            res.send(err);
         } else {
             let indexToBeUpdated;
             for (let i = 0; i < foundUser.todo.length; i++){
@@ -98,7 +104,8 @@ router.put('/u/:id', auth, (req, res) => {
             });
             foundUser.save((err, success) => {
                 if (err) {
-                    console.log(err)
+                    console.log(err);
+                    res.send(err);
                 } else {
                     console.log('Data Updated Successfully');
                     res.send(success)
@@ -121,7 +128,8 @@ router.delete('/d/:id', auth, (req, res) => {
         }
       },(err,success)=>{
         if (err) {
-            console.log(err); 
+            console.log(err);
+            res.send(err);
         } else {
             console.log('Data Deleted Successfully');
             res.send(success);

@@ -33,11 +33,7 @@ let app = angular.module('todo', ['ngRoute', 'ngAnimate']);
                     templateUrl:'views/updateTodo.html',
                     cache:false
                 })
-                .when('/todo/u', {
-                    templateUrl: 'views/updateTodo.html',
-                    cache:false
-                })
-                .otherwise('/');
+                .otherwise('/login');
         })
 
         app.config(['$qProvider', function ($qProvider) {

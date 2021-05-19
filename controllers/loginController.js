@@ -1,4 +1,4 @@
-app.controller('loginController', ($scope, $http,$location,$rootScope) => {
+app.controller('loginController', ($scope, $http, $location, $rootScope) => {
     $scope.data = {};
     window.localStorage.clear();
     $rootScope.userName = "";
@@ -9,8 +9,15 @@ app.controller('loginController', ($scope, $http,$location,$rootScope) => {
             method: 'POST',
             data: $scope.data,
         }).then((response) => {
-            window.localStorage.setItem('token', `${response.data.token}`);
-            $location.path('/todo');
+            if (response.data.success) {
+                $scope.show = !response.data.success;
+                window.localStorage.setItem('token', `${response.data.token}`);
+                $location.path('/todo');
+            } else {
+                alert('Invalid Credentials! Please try again');
+                $scope.data = {};
+                $location.path('/login');
+            }
         })
     }
 })
