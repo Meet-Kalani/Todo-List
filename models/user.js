@@ -1,10 +1,13 @@
+// Importing packages
 const mongoose = require('mongoose');
 const { todoSchema } = require('./todo');
 const config = require('config');
 
+// Database Connection String
 mongoose.connect("mongodb+srv://admin:"+config.get('dbPassword')+"@cluster0.jcpjt.mongodb.net/todo?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true ,useFindAndModify:false });
 //mongoose.connect("mongodb://localhost/To-Do", { useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:false });
 
+// Database Schema
 let userSchema = new mongoose.Schema({
     userName:{
         type:String,
@@ -27,4 +30,5 @@ let userSchema = new mongoose.Schema({
     todo:[todoSchema]
 })
 
+// Exporting Model
 module.exports = mongoose.model('user', userSchema);

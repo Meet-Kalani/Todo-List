@@ -1,6 +1,8 @@
 app.controller('accordionBtnController', ($scope, $http, $location, $route, $rootScope) => {
     
+    // Function for Requesting Update in To-Do
     $scope.update = (data) => {
+        // Setting ID in $rootScope for using it in updateTodoController for actually updating data
         $rootScope.todoID = data._id;
 
         $http({
@@ -14,6 +16,7 @@ app.controller('accordionBtnController', ($scope, $http, $location, $route, $roo
                 "Cache-Control": "no-cache, no-store, must-revalidate"
             }
         }).then((response) => {
+            // Setting data in $rootScope for using it in updateTodoController
             $rootScope.data = response.data;
             $location.path('/todo/u')
         }, (error) => {
@@ -21,6 +24,7 @@ app.controller('accordionBtnController', ($scope, $http, $location, $route, $roo
         });
     }
 
+    // Function for Requesting Delete in To-Do
     $scope.delete = (data) => {
         $http({
             url: "/todo/d/" + data._id,
@@ -33,6 +37,7 @@ app.controller('accordionBtnController', ($scope, $http, $location, $route, $roo
                 "Cache-Control": "no-cache, no-store, must-revalidate"
             }
         }).then((response) => {
+            // Refreshing view to reflect data
             $route.reload();
         })
     }

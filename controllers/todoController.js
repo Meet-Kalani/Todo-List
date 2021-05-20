@@ -5,9 +5,11 @@ app.controller('todoController', ($scope, $http, $rootScope, $route,$location) =
     $scope.done = [];
     $scope.userID;
 
+    // Checking for Request header if User have Authorization to add new Todo
     if(window.localStorage.getItem('token') == undefined){
-        $location.path('/login');
+        $location.path('/');
     } else {
+        // Getting data from base Todo Route
         $http({
             url: '/todo/',
             method: 'GET',
@@ -23,6 +25,7 @@ app.controller('todoController', ($scope, $http, $rootScope, $route,$location) =
             $rootScope.userName = response.data.userName;
             $rootScope.userID = response.data._id;
     
+            // Sorting Out position 
             for (let i = 0; i < $scope.data.todo.length; i++) {
                 if ($scope.data.todo[i].position == "To Do") {
                     $scope.toDo.push($scope.data.todo[i]);

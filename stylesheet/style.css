@@ -108,10 +108,6 @@ footer a{
     font-size: small;
 }
 
-
-/* Todo Page */
-
-
 .accordion {
     list-style-type: none;
     margin-bottom: 10px;
@@ -217,10 +213,6 @@ button:hover{
     border: none;
 }
 
-
-/* Add New Todo View  */
-
-
 .newTodoForm,.signUpForm,.loginForm,.updateTodo,.contactForm{
     width:100%;
     height:100%;
@@ -254,7 +246,6 @@ button:hover{
 }
 
 .newTodoForm > .center-content,.signUpForm > div,.loginForm > div, .updateTodo > div, .contactForm > div{
-    /* border-radius: 0 15px 15px 0; */
     border-radius: 15px;
 }
 

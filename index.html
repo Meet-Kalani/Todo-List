@@ -6,9 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do App</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link type="text/css" href="stylesheet/style.css" rel="stylesheet">
+
+    <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -39,6 +45,7 @@
     </footer>
 
     <script>
+        // For Displaying Menu Icon when screen is small
         function responsiveNavbar() {
             let navbar = document.querySelector(".navbar");
             let menuIcon = document.querySelector(".menu-icon");
@@ -53,9 +60,11 @@
         }
     </script>
 
+    <!-- Angular JS -->
     <script src="https://code.angularjs.org/1.8.2/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
-    <script src="https://code.angularjs.org/1.8.2/angular-animate.min.js"></script>
+
+    <!-- Controllers for App -->
     <script src="controllers/routing.js"></script>
     <script src="controllers/todoController.js"></script>
     <script src="controllers/signupController.js"></script>
@@ -65,5 +74,4 @@
     <script src="controllers/addNewTodoController.js"></script>
     <script src="controllers/accordionBtnController.js"></script>
 </body>
-
 </html>

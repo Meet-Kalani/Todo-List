@@ -1,4 +1,4 @@
-let app = angular.module('todo', ['ngRoute', 'ngAnimate']);
+let app = angular.module('todo', ['ngRoute']);
         app.config(($routeProvider) => {
             $routeProvider
                 .when('/', {
@@ -33,7 +33,7 @@ let app = angular.module('todo', ['ngRoute', 'ngAnimate']);
                     templateUrl:'views/updateTodo.html',
                     cache:false
                 })
-                .otherwise('/login');
+                .otherwise('/');
         })
 
         app.config(['$qProvider', function ($qProvider) {

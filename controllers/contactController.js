@@ -1,10 +1,12 @@
 app.controller('contactController', ($scope, $http,$location) => {
     $scope.data = {};
 
+    // Checking for Request header if User have Authorization to add new Todo
     if (window.localStorage.getItem('token') == undefined) {
-        $location.path("/login");
+        $location.path("/");
         return;
     } else {
+        // Submitting Data to Contact Route Handler
         $scope.submit = () => {
             $http({
                 url: '/user/contact',

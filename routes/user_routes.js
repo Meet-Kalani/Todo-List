@@ -1,3 +1,4 @@
+// Importing Packages
 const user = require('../models/user');
 const bcrypt = require('bcrypt');
 const config = require('config')
@@ -7,27 +8,40 @@ const express = require('express');
 const router = express.Router();
 const saltRounds = 10;
 
-router.post('/signup', (req, res) => {
+// Route Handlers
+router.post('/signup', async (req, res) => {
     try {
-        bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
-            user.create({
-                userName: req.body.userName,
-                mail: req.body.mail,
-                password: hash,
-            }, (err, success) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log('New user signed up');
-                    console.log('---------------------------------------------');
-                    console.log('User Name: ' + success.userName);
-                    console.log('User Mail: ' + success.mail);
-                    console.log('---------------------------------------------');
-                    console.log('')
-                    res.redirect('/');
-                }
+        const isRegistered = await user.findOne({ mail: req.body.mail }, (err, success) => {
+            if (err) {
+                throw err;
+            }
+        })
+
+        if (isRegistered.mail == req.body.mail) {
+            res.send('false')
+        } else {
+            // Hashing password to store in db
+            bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+                // creating user
+                user.create({
+                    userName: req.body.userName,
+                    mail: req.body.mail,
+                    password: hash,
+                }, (err, success) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('New user signed up');
+                        console.log('---------------------------------------------');
+                        console.log('User Name: ' + success.userName);
+                        console.log('User Mail: ' + success.mail);
+                        console.log('---------------------------------------------');
+                        console.log('')
+                        res.redirect('/');
+                    }
+                });
             });
-        });
+        }
     } catch (err) {
         console.log(err);
         res.send(err);
@@ -35,6 +49,7 @@ router.post('/signup', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
+    // Finding user for verifying credentials
     user.find({ mail: req.body.mail }, (err, success) => {
         if (err || success.length == 0) {
             res.json({
@@ -65,6 +80,7 @@ router.post('/login', (req, res) => {
     })
 })
 
+// Route for handling contact requests
 router.post('/contact', (req, res) => {
     try {
         console.log(req.body);
@@ -99,4 +115,5 @@ router.post('/contact', (req, res) => {
     }
 })
 
+// Exporting router object
 module.exports = router;
